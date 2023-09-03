@@ -17,7 +17,6 @@ HashMap的解釋以及常用方法放在文章的最後，有需要的人可以�
 <pre><strong>Input:</strong> nums = [1,1,1,3,3,4,3,2,4,2]
 <strong>Output:</strong> true</pre>
 
-
 ### Sort
 
 首先將陣列排序，並遍歷陣列一次(n-1)，如果元素和下一個元素相同，回傳True；否則False。
@@ -39,12 +38,9 @@ class Solution {
 }
 ```
 
-
 Time Complexity: O(nlogn)，排序
 
 Space Complexity: O(1)
-
-
 
 ### HashSet
 
@@ -93,7 +89,6 @@ Time Complexity: O(n)
 
 Space Complexity: O(n)
 
-
 # Two Sum
 
 問題：一串陣列中，某兩個元素相加會等於target，如果有則回傳兩個元素的index；如果沒有則回傳空陣列
@@ -132,7 +127,6 @@ Time Complexity: O(n^2)，巢狀迴圈
 
 Space Complexity: O(1)，只使用常數變數
 
-
 ### HashMap
 
 1. 首先先建立一個HashMap，存放所有元素。
@@ -143,7 +137,10 @@ Space Complexity: O(1)，只使用常數變數
 
 請看圖解~
 
+**Example X:**
 
+<pre><strong>Input:</strong> nums = [3,3,2,4], target = 6
+<strong>Output:</strong> [1,2]</pre>
 
 
 ```java
@@ -160,7 +157,7 @@ class Solution {
         //找出補數並搜尋
         for(int j=0;j<nums.length;j++){
             int complement = target - nums[j];
-            if(num_hash.containsKey(complement) && num_hash.get(complement) != j){
+            if(num_hash.containsKey(complement) && num_hash.get(complement) != j)
                 //要回傳index, 故要找出complement的index
                 return new int[] {j,num_hash.get(complement)};
             }
@@ -175,7 +172,6 @@ class Solution {
 Time Complexity: O(n)，陣列遍歷一次
 
 Space Complexity: O(n)，Worst Case會包含所有Array的資料
-
 
 # HashMap
 
@@ -213,7 +209,6 @@ hashmap.containsKey()
 // 清空 HashMap
 
 hashmap.clear();
-
 
 參考資料:
 
